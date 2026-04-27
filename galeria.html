@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería — Portafolio</title>
+  <style>
+    /* ── Reset y base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ── Barra de navegación ── */
+    nav {
+      background: #2c3e50;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: #3498db; }
+
+    nav .logo {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-right: auto;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem 3rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+      animation: fadeInUp 0.8s ease both;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #666;
+      animation: fadeInUp 0.8s 0.2s ease both;
+    }
+
+    /* ── Secciones ── */
+    section {
+      max-width: 960px;
+      margin: 0 auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      border-left: 4px solid #3498db;
+      padding-left: 0.75rem;
+    }
+
+    /* ── Galería en cuadrícula ── */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .galeria figure {
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      background: #fff;
+    }
+
+    .galeria img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .galeria figure:hover img { transform: scale(1.07); }
+
+    .galeria figcaption {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.85rem;
+      color: #555;
+      text-align: center;
+    }
+
+    /* ── Imagen destacada ── */
+    .imagen-destacada {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .imagen-destacada img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* ── GIF / Animación ── */
+    .gif-demo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .gif-demo img {
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+
+    .gif-demo .descripcion { flex: 1; min-width: 200px; }
+
+    /* ── Instrucciones coloreadas ── */
+    .instrucciones {
+      background: #eaf4fb;
+      border-left: 4px solid #3498db;
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      font-size: 0.92rem;
+    }
+
+    .instrucciones code {
+      background: #d0e8f7;
+      padding: 0.1em 0.4em;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    /* ── Botón volver ── */
+    .btn-volver {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.7rem 1.5rem;
+      background: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .btn-volver:hover { background: #2980b9; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #999;
+      border-top: 1px solid #ddd;
+      margin-top: 2rem;
+    }
+
+    /* ── Animaciones CSS ── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50%       { transform: scale(1.05); }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    /* Clases de utilidad */
+    .animado     { animation: fadeInUp 0.9s ease both; }
+    .pulso       { animation: pulse 2.5s ease-in-out infinite; }
+    .girando     { animation: spin 4s linear infinite; display: inline-block; }
+    .delay-1     { animation-delay: 0.15s; }
+    .delay-2     { animation-delay: 0.30s; }
+    .delay-3     { animation-delay: 0.45s; }
+    .delay-4     { animation-delay: 0.60s; }
+  </style>
+</head>
+<body>
+
+  <!-- Navegación -->
+  <nav>
+    <span class="logo">📁 Portafolio</span>
+    <a href="index.html">Inicio (Markdown)</a>
+    <a href="galeria.html">Galería (HTML)</a>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>🖼️ Galería — Método HTML</h1>
+    <p>Esta página muestra cómo añadir imágenes, GIFs y animaciones usando HTML puro.</p>
+  </div>
+
+  <!-- ───── Sección 1: Imagen destacada ───── -->
+  <section>
+    <h2>Imagen destacada</h2>
+    <div class="imagen-destacada animado">
+      <!--
+        PARA AÑADIR TU IMAGEN:
+        1. Sube tu archivo a assets/images/
+        2. Cambia la URL del atributo src
+      -->
+      <img
+        src="https://via.placeholder.com/800x400?text=Sube+tu+imagen+a+assets%2Fimages%2F"
+        alt="Imagen destacada"
+        width="800">
+    </div>
+    <div class="instrucciones" style="margin-top:1rem;">
+      Sube tu imagen a <code>assets/images/</code> y cambia la <code>src</code> a
+      <code>assets/images/tu-imagen.jpg</code>.
+    </div>
+  </section>
+
+  <!-- ───── Sección 2: Galería en cuadrícula ───── -->
+  <section>
+    <h2>Galería en cuadrícula</h2>
+    <div class="galeria">
+      <figure class="animado">
+        <img src="https://via.placeholder.com/300x300?text=Imagen+1" alt="Imagen 1">
+        <figcaption>Título imagen 1</figcaption>
+      </figure>
+      <figure class="animado delay-1">
+        <img src="https://via.placeholder.com/300x300?text=Imagen+2" alt="Imagen 2">
+        <figcaption>Título imagen 2</figcaption>
+      </figure>
+      <figure class="animado delay-2">
+        <img src="https://via.placeholder.com/300x300?text=Imagen+3" alt="Imagen 3">
+        <figcaption>Título imagen 3</figcaption>
+      </figure>
+      <figure class="animado delay-3">
+        <img src="https://via.placeholder.com/300x300?text=Imagen+4" alt="Imagen 4">
+        <figcaption>Título imagen 4</figcaption>
+      </figure>
+    </div>
+    <div class="instrucciones" style="margin-top:1rem;">
+      Reemplaza cada <code>src</code> con rutas reales, por ejemplo:
+      <code>assets/images/proyecto1.jpg</code>
+    </div>
+  </section>
+
+  <!-- ───── Sección 3: GIF animado ───── -->
+  <section>
+    <h2>GIF / Animación</h2>
+    <div class="gif-demo">
+      <!--
+        Para usar un GIF:
+        <img src="assets/images/animacion.gif" alt="GIF" width="300" class="pulso">
+      -->
+      <img
+        src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
+        alt="GIF de ejemplo"
+        width="260"
+        class="pulso">
+      <div class="descripcion">
+        <p>Los GIFs se insertan exactamente igual que las imágenes.</p>
+        <p style="margin-top:0.75rem;">
+          Sube tu <code>.gif</code> a <code>assets/images/</code> y usa:<br>
+          <code style="display:block; margin-top:0.4rem; background:#eee; padding:0.5rem; border-radius:4px;">
+            &lt;img src="assets/images/animacion.gif" alt="..." width="300" class="pulso"&gt;
+          </code>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── Sección 4: Demostración de animaciones CSS ───── -->
+  <section>
+    <h2>Clases de animación disponibles</h2>
+    <div style="display:flex; gap:2rem; flex-wrap:wrap; align-items:center; margin-bottom:1rem;">
+      <div style="text-align:center;">
+        <img src="https://via.placeholder.com/100?text=fadeInUp" alt="fadeInUp" width="100" class="animado">
+        <p style="margin-top:0.4rem;font-size:0.85rem;"><code>.animado</code><br>Fade-in desde abajo</p>
+      </div>
+      <div style="text-align:center;">
+        <img src="https://via.placeholder.com/100?text=pulso" alt="pulso" width="100" class="pulso">
+        <p style="margin-top:0.4rem;font-size:0.85rem;"><code>.pulso</code><br>Escala pulsante</p>
+      </div>
+      <div style="text-align:center;">
+        <img src="https://via.placeholder.com/100?text=girando" alt="girando" width="100" class="girando">
+        <p style="margin-top:0.4rem;font-size:0.85rem;"><code>.girando</code><br>Rotación continua</p>
+      </div>
+    </div>
+    <div class="instrucciones">
+      Añade la clase CSS al elemento que quieras animar, por ejemplo:<br>
+      <code>&lt;img src="..." class="animado"&gt;</code> —
+      <code>&lt;img src="..." class="pulso"&gt;</code> —
+      <code>&lt;img src="..." class="girando"&gt;</code>
+    </div>
+  </section>
+
+  <!-- Botón volver -->
+  <section style="text-align:center; padding-bottom:1rem;">
+    <a href="index.html" class="btn-volver">← Volver al inicio (Markdown)</a>
+  </section>
+
+  <footer>
+    &copy; 2026 TTAndrei · Portafolio personal
+  </footer>
+
+</body>
+</html>
