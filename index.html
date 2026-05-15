@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Andrei Akirov — Aerospace Engineering Student. GPU-accelerated CFD, autonomous drone systems, flight data analysis.">
+  <title>Andrei Akirov — Aerospace Engineering</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <!-- ─── Nav ──────────────────────────────────────── -->
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo">A<span>.</span>Akirov</a>
+    <ul class="nav-links">
+      <li><a href="#featured">01 / CFD</a></li>
+      <li><a href="#drones">02 / Drones</a></li>
+      <li><a href="#pgta">03–04 / PGTA</a></li>
+      <li><a href="#about">Sobre mí</a></li>
+    </ul>
+  </nav>
+
+  <!-- ─── Hero ─────────────────────────────────────── -->
+  <section class="hero" id="hero">
+
+    <!-- Radar scope SVG — decorative -->
+    <svg class="radar" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+      <!-- Range rings -->
+      <circle cx="200" cy="200" r="55"  fill="none" stroke="currentColor" stroke-width="0.75" opacity="0.4"/>
+      <circle cx="200" cy="200" r="110" fill="none" stroke="currentColor" stroke-width="0.75" opacity="0.28"/>
+      <circle cx="200" cy="200" r="165" fill="none" stroke="currentColor" stroke-width="0.75" opacity="0.18"/>
+      <circle cx="200" cy="200" r="190" fill="none" stroke="currentColor" stroke-width="0.5"  opacity="0.1"/>
+      <!-- Crosshairs -->
+      <line x1="200" y1="10"  x2="200" y2="390" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+      <line x1="10"  y1="200" x2="390" y2="200" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+      <line x1="57"  y1="57"  x2="343" y2="343" stroke="currentColor" stroke-width="0.4" opacity="0.12"/>
+      <line x1="343" y1="57"  x2="57"  y2="343" stroke="currentColor" stroke-width="0.4" opacity="0.12"/>
+      <!-- Sweep line (rotates via CSS) -->
+      <g class="radar-sweep">
+        <line x1="200" y1="200" x2="200" y2="10"  stroke="currentColor" stroke-width="1.5" opacity="0.8"/>
+        <polygon points="200,200 196,60 204,60" fill="currentColor" opacity="0.15"/>
+      </g>
+      <!-- Center dot -->
+      <circle cx="200" cy="200" r="3" fill="currentColor" opacity="0.6"/>
+    </svg>
+
+    <div class="hero-inner">
+      <p class="hero-eyebrow reveal">Portfolio de ingeniería</p>
+      <h1 class="hero-name reveal reveal-delay-1">ANDREI<br>AKIROV</h1>
+      <hr class="hero-rule reveal reveal-delay-2" aria-hidden="true">
+      <p class="hero-title reveal reveal-delay-2">Aerospace Engineering Student</p>
+      <p class="hero-tagline reveal reveal-delay-3">
+        Simulaciones CFD aceleradas por GPU. Sistemas de drones autónomos.<br>
+        Software de análisis de trayectorias de vuelo. Construido desde cero.
+      </p>
+      <div class="hero-ctas reveal reveal-delay-4">
+        <a href="#featured" class="btn btn-primary">Ver proyectos ↓</a>
+        <a href="https://github.com/TTAndrei" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Featured: Optimizador ────────────────────── -->
+  <section class="section featured" id="featured" aria-labelledby="featured-title">
+    <div class="container">
+      <p class="section-label">01 / Proyecto principal</p>
+      <hr class="section-rule" aria-hidden="true">
+
+      <div class="featured-inner">
+
+        <!-- Left: content -->
+        <div class="featured-content">
+          <p class="project-number reveal">01 / FEATURED · Solo project</p>
+          <h2 class="project-title reveal reveal-delay-1" id="featured-title">
+            Optimizador de Perfiles<br>Alares 2D con LES
+          </h2>
+          <p class="project-desc reveal reveal-delay-1">
+            Solver completo de dinámica de fluidos computacional (LES 2D incompresible)
+            implementado en CuPy/CUDA desde cero. Combina un algoritmo genético que
+            evoluciona geometrías de perfiles alares y un predictor de Random Forest
+            que filtra individuos sin ejecutar la simulación completa.
+          </p>
+
+          <div class="tags reveal reveal-delay-2">
+            <span class="tag">Python</span>
+            <span class="tag">CuPy / CUDA</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">scikit-learn</span>
+            <span class="tag">LES turbulence</span>
+            <span class="tag">Multigrid</span>
+            <span class="tag">Genetic Algorithm</span>
+            <span class="tag">Immersed Boundary</span>
+          </div>
+
+          <div class="metrics reveal reveal-delay-2">
+            <div class="metric">
+              <span class="metric-value">4.9</span>
+              <span class="metric-label">it/s en ~240k celdas (RTX 3070 Ti)</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">&lt;5%</span>
+              <span class="metric-label">Divergencia residual (defect-correction)</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">13.3</span>
+              <span class="metric-label">L/D — NACA0012, Re=100k, α=5°</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">50k–2M</span>
+              <span class="metric-label">Rango Reynolds validado</span>
+            </div>
+          </div>
+
+          <div class="project-links reveal reveal-delay-3">
+            <a href="https://github.com/TTAndrei" target="_blank" rel="noopener" class="btn btn-ghost">
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: screenshots -->
+        <div class="featured-images">
+
+          <figure class="img-slot reveal reveal-delay-1" id="fig-velocity">
+            <img
+              src="assets/images/optimizador-velocity.png"
+              alt="Campo de velocidades (magnitud U) sobre perfil NACA0012, Re=100k, colormap turbo"
+              width="800"
+              height="450"
+              loading="lazy"
+            >
+            <figcaption class="img-caption">Campo de velocidades — NACA0012</figcaption>
+          </figure>
+
+          <figure class="img-slot reveal reveal-delay-2" id="fig-ld">
+            <img
+              src="assets/images/optimizador-ld.png"
+              alt="Curva de convergencia L/D a lo largo de generaciones del algoritmo genético"
+              width="800"
+              height="450"
+              loading="lazy"
+            >
+            <figcaption class="img-caption">Convergencia L/D — Algoritmo genético</figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Supporting Projects ──────────────────────── -->
+  <section class="section projects-section" id="projects" aria-label="Otros proyectos">
+    <div class="container">
+      <p class="section-label">02–04 / Otros proyectos</p>
+      <hr class="section-rule" aria-hidden="true">
+
+      <!-- 02: Drones (wide, 2-col) -->
+      <div class="project-wide" id="drones" aria-labelledby="drones-title">
+
+        <figure class="img-slot reveal" id="fig-drones">
+          <img
+            src="assets/images/drones-dashboard.png"
+            alt="DashboardTOTAL del sistema de drones: controles de vuelo, telemetría, mapa GPS y panel de detección"
+            width="800"
+            height="450"
+            loading="lazy"
+          >
+          <figcaption class="img-caption">DashboardTOTAL — control y telemetría en tiempo real</figcaption>
+        </figure>
+
+        <div class="featured-content">
+          <p class="project-number reveal">02 / Systems project</p>
+          <h2 class="project-title reveal reveal-delay-1" id="drones-title">
+            Sistema de Control de<br>Drones Autónomo
+          </h2>
+          <p class="project-desc reveal reveal-delay-1">
+            Plataforma completa de control de drones que integra MAVLink/MQTT para
+            operación local y remota, detección de objetos con YOLOv5, seguimiento
+            autónomo por control PD y streaming de vídeo WebRTC. Dashboard unificado
+            con mapa GPS interactivo y telemetría en tiempo real.
+          </p>
+
+          <div class="tags reveal reveal-delay-2">
+            <span class="tag">Python</span>
+            <span class="tag">MAVLink</span>
+            <span class="tag">MQTT</span>
+            <span class="tag">YOLOv5</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">WebRTC</span>
+            <span class="tag">ArduPilot SITL</span>
+            <span class="tag">C#</span>
+          </div>
+
+          <div class="metrics reveal reveal-delay-2">
+            <div class="metric">
+              <span class="metric-value">50+ Hz</span>
+              <span class="metric-label">RC override commands (PD control)</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">80</span>
+              <span class="metric-label">Clases COCO — YOLOv5 small model</span>
+            </div>
+          </div>
+
+          <div class="project-links reveal reveal-delay-3">
+            <a href="assets/images/drones-detection.png" target="_blank" class="btn btn-ghost">
+              Ver detección YOLOv5 ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 03 + 04: PGTA pair -->
+      <div class="project-pair" id="pgta">
+
+        <!-- 03: PGTA-P2 -->
+        <article class="project-card" aria-labelledby="pgta2-title">
+          <figure class="img-slot reveal" id="fig-pgta2">
+            <img
+              src="assets/images/pgta2-map.png"
+              alt="Mapa del aeropuerto de Barcelona con trayectorias CAT21 en naranja y CAT48 en azul"
+              width="800"
+              height="450"
+              loading="lazy"
+            >
+            <figcaption class="img-caption">Aeropuerto BCN — CAT21 (naranja) + CAT48 (azul)</figcaption>
+          </figure>
+
+          <p class="project-number reveal">03 / Team project</p>
+          <h3 class="project-title reveal reveal-delay-1" id="pgta2-title">
+            Decodificador ASTERIX Cat 21/48
+          </h3>
+          <p class="project-desc reveal reveal-delay-1">
+            Aplicación que decodifica mensajes de vigilancia ASTERIX (categorías 21 y 48)
+            desde binario/hexadecimal, aplica filtros geográficos y de estado, y visualiza
+            las trayectorias sobre un mapa interactivo del aeropuerto de Barcelona con
+            exportación a CSV.
+          </p>
+
+          <div class="tags reveal reveal-delay-2">
+            <span class="tag">Python</span>
+            <span class="tag">ASTERIX Cat 21</span>
+            <span class="tag">ASTERIX Cat 48</span>
+            <span class="tag">GIS / Maps</span>
+          </div>
+
+          <div class="metrics reveal reveal-delay-2" style="grid-template-columns:1fr;">
+            <div class="metric">
+              <span class="metric-value">Cat 21+48</span>
+              <span class="metric-label">ADS-B + SSR Mode S decodificados</span>
+            </div>
+          </div>
+
+          <div class="project-links reveal reveal-delay-3">
+            <a href="https://github.com/TTAndrei/PGTA-P2" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
+          </div>
+        </article>
+
+        <!-- 04: PGTA-P3 -->
+        <article class="project-card" aria-labelledby="pgta3-title">
+          <figure class="img-slot reveal" id="fig-pgta3">
+            <img
+              src="assets/images/pgta3-chart.png"
+              alt="Gráfico de análisis de trayectoria de vuelo: velocidad indicada, ángulo de viraje o separación TWR"
+              width="800"
+              height="450"
+              loading="lazy"
+            >
+            <figcaption class="img-caption">Análisis de trayectoria — métricas de vuelo</figcaption>
+          </figure>
+
+          <p class="project-number reveal">04 / Team project</p>
+          <h3 class="project-title reveal reveal-delay-1" id="pgta3-title">
+            Suite de Análisis de<br>Trayectorias de Vuelo
+          </h3>
+          <p class="project-desc reveal reveal-delay-1">
+            Aplicación de escritorio Windows (.NET 4.7.2, C#) para análisis de datos
+            de radar y vuelo. Calcula IAS, ángulos de viraje, separación TWR/TMA,
+            umbrales y niveles de ruido. Exporta resultados a CSV, Excel y KML
+            con visualización sobre mapas interactivos.
+          </p>
+
+          <div class="tags reveal reveal-delay-2">
+            <span class="tag">C#</span>
+            <span class="tag">.NET 4.7.2</span>
+            <span class="tag">GMap.NET</span>
+            <span class="tag">WGS84</span>
+            <span class="tag">KML export</span>
+          </div>
+
+          <div class="metrics reveal reveal-delay-2" style="grid-template-columns:1fr;">
+            <div class="metric">
+              <span class="metric-value">6</span>
+              <span class="metric-label">Tipos de métrica: IAS, Viraje, TWR, TMA, THR, Sonómetro</span>
+            </div>
+          </div>
+
+          <div class="project-links reveal reveal-delay-3">
+            <a href="https://github.com/deividmg/PGTA_P3" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── About ─────────────────────────────────────── -->
+  <section class="section about-section" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <p class="section-label">Sobre mí</p>
+      <hr class="section-rule" aria-hidden="true">
+
+      <div class="about-inner">
+        <div class="about-bio">
+          <h2 class="project-title reveal" id="about-title" style="margin-bottom:1.5rem">
+            Andrei Akirov
+          </h2>
+          <div class="reveal reveal-delay-1">
+            <p>
+              Estudiante de <strong>Ingeniería Aeroespacial</strong> con orientación
+              a métodos computacionales, sistemas autónomos y software de ingeniería.
+              Construyo herramientas desde cero: solvers CFD acelerados por GPU,
+              plataformas de control de drones y suites de análisis de trayectorias de vuelo.
+            </p>
+            <p>
+              Mi trabajo está en la frontera entre la física y el código. Me interesa
+              más entender qué ocurre a Re=100.000 que elegir una librería,
+              y cerrar un bucle de control antes que abstraerlo. Los proyectos de
+              este portfolio son herramientas que funcionan, no demos.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-contact reveal reveal-delay-2">
+          <p class="contact-label">Contacto</p>
+          <div class="contact-links">
+            <a href="https://github.com/TTAndrei" target="_blank" rel="noopener" class="contact-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+              TTAndrei
+            </a>
+            <a href="mailto:andrei.akigu@gmail.com" class="contact-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              andrei.akigu@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ────────────────────────────────────── -->
+  <footer class="footer" aria-label="Pie de página">
+    <div class="container footer-inner">
+      <span class="footer-copy">© 2026 Andrei Akirov</span>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="https://github.com/TTAndrei" target="_blank" rel="noopener">GitHub</a>
+        <a href="#hero">Inicio</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ─── JS ───────────────────────────────────────── -->
+  <script>
+    // Intersection observer reveals
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Image placeholder fallback
+    document.querySelectorAll('.img-slot img').forEach(img => {
+      const slot = img.closest('.img-slot');
+      const caption = slot.querySelector('.img-caption');
+      const filename = img.src.split('/').pop();
+
+      function markMissing() {
+        slot.classList.add('missing');
+        img.style.display = 'none';
+        if (caption) caption.style.display = 'none';
+        const label = document.createElement('div');
+        label.className = 'placeholder-label';
+        label.innerHTML = '<strong>Captura requerida</strong>' + filename;
+        slot.appendChild(label);
+      }
+
+      img.addEventListener('error', markMissing);
+
+      // If src is empty or placeholder, also mark missing
+      if (!img.src || img.src === window.location.href) markMissing();
+    });
+  </script>
+
+</body>
+</html>
