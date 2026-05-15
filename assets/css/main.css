@@ -267,11 +267,11 @@ a:hover {
 }
 
 .section-label {
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  font-weight: 600;
   color: var(--accent);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
@@ -279,7 +279,7 @@ a:hover {
 .section-rule {
   width: 100%;
   height: 1px;
-  background: var(--border);
+  background: linear-gradient(to right, var(--accent), oklch(65% 0.19 250 / 0));
   border: none;
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
@@ -288,7 +288,7 @@ a:hover {
 
 .featured {
   background: var(--surface-accent);
-  border-top: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
   border-bottom: 1px solid var(--border);
 }
 
@@ -301,6 +301,11 @@ a:hover {
 
 .featured-content {
   padding-top: 0.5rem;
+}
+
+.featured .project-title {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  line-height: 1.08;
 }
 
 .project-number {
@@ -316,9 +321,9 @@ a:hover {
 .project-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-  color: var(--text);
-  line-height: 1.2;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  color: var(--accent);
+  line-height: 1.15;
   margin-bottom: 1.25rem;
 }
 
@@ -345,6 +350,12 @@ a:hover {
   padding: 0.25rem 0.625rem;
   border-radius: 2px;
   letter-spacing: 0.04em;
+  transition: border-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+.tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .metrics {
@@ -490,7 +501,7 @@ a:hover {
 }
 
 .project-card .project-title {
-  font-size: clamp(1.1rem, 2vw, 1.375rem);
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
 }
 
 .project-card .metric-value {
