@@ -63,9 +63,6 @@
   <!-- ─── Featured: Optimizador ────────────────────── -->
   <section class="section featured" id="featured" aria-labelledby="featured-title">
     <div class="container">
-      <p class="section-label">01 / Proyecto principal</p>
-      <hr class="section-rule" aria-hidden="true">
-
       <div class="featured-inner">
 
         <!-- Left: content -->
@@ -151,8 +148,6 @@
   <!-- ─── Supporting Projects ──────────────────────── -->
   <section class="section projects-section" id="projects" aria-label="Otros proyectos">
     <div class="container">
-      <p class="section-label">02–04 / Otros proyectos</p>
-      <hr class="section-rule" aria-hidden="true">
 
       <!-- 02: Drones (wide, 2-col) -->
       <div class="project-wide" id="drones" aria-labelledby="drones-title">
@@ -211,95 +206,52 @@
 
       </div>
 
-      <!-- 03 + 04: PGTA pair -->
-      <div class="project-pair" id="pgta">
+      <!-- 03 + 04: PGTA academic strip (differentiated from card grid) -->
+      <div class="pgta-projects reveal" id="pgta">
 
-        <!-- 03: PGTA-P2 -->
-        <article class="project-card" aria-labelledby="pgta2-title">
-          <figure class="img-slot reveal" id="fig-pgta2">
-            <img
-              src="assets/images/pgta2-map.png"
-              alt="Mapa del aeropuerto de Barcelona con trayectorias CAT21 en naranja y CAT48 en azul"
-              width="800"
-              height="450"
-              loading="lazy"
-            >
-            <figcaption class="img-caption">Aeropuerto BCN — CAT21 (naranja) + CAT48 (azul)</figcaption>
-          </figure>
+        <header class="pgta-header">
+          <p class="project-number">03–04 / Proyectos académicos</p>
+          <span class="pgta-context">Desarrollados en equipo. Python · C# · .NET.</span>
+        </header>
 
-          <p class="project-number reveal">03 / Team project</p>
-          <h3 class="project-title reveal reveal-delay-1" id="pgta2-title">
-            Decodificador ASTERIX Cat 21/48
-          </h3>
-          <p class="project-desc reveal reveal-delay-1">
-            Aplicación que decodifica mensajes de vigilancia ASTERIX (categorías 21 y 48)
-            desde binario/hexadecimal, aplica filtros geográficos y de estado, y visualiza
-            las trayectorias sobre un mapa interactivo del aeropuerto de Barcelona con
-            exportación a CSV.
-          </p>
-
-          <div class="tags reveal reveal-delay-2">
+        <div class="pgta-row">
+          <span class="pgta-num" aria-hidden="true">03</span>
+          <div class="pgta-info">
+            <h3 class="pgta-title" id="pgta2-title">Decodificador ASTERIX Cat 21/48</h3>
+            <p class="pgta-desc">Decodifica mensajes de vigilancia ASTERIX (Cat 21 ADS-B y Cat 48 SSR Mode S), aplica filtros geográficos y de estado, y visualiza trayectorias sobre mapa interactivo del aeropuerto de Barcelona. Exporta a CSV.</p>
+          </div>
+          <div class="pgta-tags">
             <span class="tag">Python</span>
-            <span class="tag">ASTERIX Cat 21</span>
-            <span class="tag">ASTERIX Cat 48</span>
+            <span class="tag">ASTERIX Cat 21/48</span>
             <span class="tag">GIS / Maps</span>
           </div>
-
-          <div class="metrics reveal reveal-delay-2" style="grid-template-columns:1fr;">
-            <div class="metric">
-              <span class="metric-value">Cat 21+48</span>
-              <span class="metric-label">ADS-B + SSR Mode S decodificados</span>
-            </div>
+          <div class="pgta-metric">
+            <span class="metric-value">Cat 21+48</span>
+            <span class="metric-label">ADS-B + SSR Mode S decodificados</span>
           </div>
+          <a href="https://github.com/TTAndrei/PGTA-P2" target="_blank" rel="noopener" class="btn btn-ghost pgta-link" aria-label="PGTA-P2 en GitHub">GitHub ↗</a>
+        </div>
 
-          <div class="project-links reveal reveal-delay-3">
-            <a href="https://github.com/TTAndrei/PGTA-P2" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
+        <hr class="pgta-divider" aria-hidden="true">
+
+        <div class="pgta-row reveal-delay-1">
+          <span class="pgta-num" aria-hidden="true">04</span>
+          <div class="pgta-info">
+            <h3 class="pgta-title" id="pgta3-title">Suite de Análisis de Trayectorias de Vuelo</h3>
+            <p class="pgta-desc">Aplicación Windows (.NET 4.7.2, C#) que calcula IAS, ángulo de viraje, separación TWR/TMA, umbrales y niveles de ruido desde datos radar. Exporta a CSV, Excel y KML con visualización en mapa interactivo.</p>
           </div>
-        </article>
-
-        <!-- 04: PGTA-P3 -->
-        <article class="project-card" aria-labelledby="pgta3-title">
-          <figure class="img-slot reveal" id="fig-pgta3">
-            <img
-              src="assets/images/pgta3-chart.png"
-              alt="Gráfico de análisis de trayectoria de vuelo: velocidad indicada, ángulo de viraje o separación TWR"
-              width="800"
-              height="450"
-              loading="lazy"
-            >
-            <figcaption class="img-caption">Análisis de trayectoria — métricas de vuelo</figcaption>
-          </figure>
-
-          <p class="project-number reveal">04 / Team project</p>
-          <h3 class="project-title reveal reveal-delay-1" id="pgta3-title">
-            Suite de Análisis de<br>Trayectorias de Vuelo
-          </h3>
-          <p class="project-desc reveal reveal-delay-1">
-            Aplicación de escritorio Windows (.NET 4.7.2, C#) para análisis de datos
-            de radar y vuelo. Calcula IAS, ángulos de viraje, separación TWR/TMA,
-            umbrales y niveles de ruido. Exporta resultados a CSV, Excel y KML
-            con visualización sobre mapas interactivos.
-          </p>
-
-          <div class="tags reveal reveal-delay-2">
+          <div class="pgta-tags">
             <span class="tag">C#</span>
             <span class="tag">.NET 4.7.2</span>
             <span class="tag">GMap.NET</span>
             <span class="tag">WGS84</span>
-            <span class="tag">KML export</span>
           </div>
-
-          <div class="metrics reveal reveal-delay-2" style="grid-template-columns:1fr;">
-            <div class="metric">
-              <span class="metric-value">6</span>
-              <span class="metric-label">Tipos de métrica: IAS, Viraje, TWR, TMA, THR, Sonómetro</span>
-            </div>
+          <div class="pgta-metric">
+            <span class="metric-value">6</span>
+            <span class="metric-label">Tipos de métrica de vuelo</span>
           </div>
-
-          <div class="project-links reveal reveal-delay-3">
-            <a href="https://github.com/deividmg/PGTA_P3" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
-          </div>
-        </article>
+          <a href="https://github.com/deividmg/PGTA_P3" target="_blank" rel="noopener" class="btn btn-ghost pgta-link" aria-label="PGTA-P3 en GitHub">GitHub ↗</a>
+        </div>
 
       </div>
     </div>
@@ -378,6 +330,24 @@
     }, { threshold: 0.08 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Nav active state on scroll
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const id = e.target.id;
+          navLinks.forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-15% 0px -70% 0px' });
+
+    ['featured', 'drones', 'pgta', 'about'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) navObserver.observe(el);
+    });
 
     // Image placeholder fallback
     document.querySelectorAll('.img-slot img').forEach(img => {
