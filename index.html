@@ -15,7 +15,8 @@
     <ul class="nav-links">
       <li><a href="#featured">CFD</a></li>
       <li><a href="#drones">Drones</a></li>
-      <li><a href="#pgta">PGTA</a></li>
+      <li><a href="#ia-local">IA Local</a></li>
+      <li><a href="#pgta">Control Aereo</a></li>
       <li><a href="#about">Sobre mí</a></li>
     </ul>
   </nav>
@@ -69,7 +70,7 @@
         <div class="featured-content">
           <p class="project-number reveal">01 / FEATURED · Solo project</p>
           <h2 class="project-title reveal reveal-delay-1" id="featured-title">
-            Optimizador de Perfiles<br>Alares 2D con LES
+            Optimizador de Perfiles<br>Alares 2D LES
           </h2>
           <p class="project-desc reveal reveal-delay-1">
             Solver completo de dinámica de fluidos computacional (LES 2D incompresible)
@@ -91,8 +92,8 @@
 
           <div class="metrics reveal reveal-delay-2">
             <div class="metric">
-              <span class="metric-value">4.9</span>
-              <span class="metric-label">it/s en ~240k celdas (RTX 3070 Ti)</span>
+              <span class="metric-value">4.9 it/s </span>
+              <span class="metric-label">~1.5M celdas (RTX 3070 Ti)</span>
             </div>
             <div class="metric">
               <span class="metric-value">&lt;5%</span>
@@ -206,11 +207,76 @@
 
       </div>
 
-      <!-- 03 + 04: PGTA academic strip (differentiated from card grid) -->
+      <!-- 03: IA Local (wide, text left / image right) -->
+      <div class="project-wide project-wide--reversed" id="ia-local" aria-labelledby="ia-local-title">
+
+        <div class="featured-content">
+          <p class="project-number reveal">03 / Solo project</p>
+          <h2 class="project-title reveal reveal-delay-1" id="ia-local-title">
+            Orquestador de IA Local<br>Híbrido Cloud + GPU
+          </h2>
+          <p class="project-desc reveal reveal-delay-1">
+            Sistema que orquesta un modelo local (Qwen 35B MoE en RTX 3070 Ti) con
+            Claude en la nube para ejecutar planes de codificación multi-paso de forma
+            autónoma. El executor monitoriza cambios por MD5, detecta desbordamientos
+            de contexto y lanza un supervisor que genera sub-planes de recuperación
+            automáticos sin intervención manual.
+          </p>
+
+          <div class="tags reveal reveal-delay-2">
+            <span class="tag">Python</span>
+            <span class="tag">llama.cpp</span>
+            <span class="tag">CUDA</span>
+            <span class="tag">Aider</span>
+            <span class="tag">Claude API</span>
+            <span class="tag">JSON Schema</span>
+            <span class="tag">Q4_K_M quantization</span>
+          </div>
+
+          <div class="metrics reveal reveal-delay-2">
+            <div class="metric">
+              <span class="metric-value">18 t/s</span>
+              <span class="metric-label">Inferencia local — RTX 3070 Ti</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">256K</span>
+              <span class="metric-label">Tokens de contexto en 8 GB VRAM</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">35B</span>
+              <span class="metric-label">Parámetros (3B activos por token, MoE)</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">−73%</span>
+              <span class="metric-label">Reducción de tamaño vía Q4_K_M</span>
+            </div>
+          </div>
+
+          <div class="project-links reveal reveal-delay-3">
+            <a href="https://github.com/TTAndrei" target="_blank" rel="noopener" class="btn btn-ghost">
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+
+        <figure class="img-slot reveal reveal-delay-1" id="fig-ia-local">
+          <img
+            src="assets/images/ia-local-terminal.png"
+            alt="Terminal mostrando executor.py ejecutando un plan: barra de progreso, steps completados y resumen de cambios de archivo"
+            width="800"
+            height="450"
+            loading="lazy"
+          >
+          <figcaption class="img-caption">Executor — plan de 3 pasos, recuperación automática activa</figcaption>
+        </figure>
+
+      </div>
+
+      <!-- 04 + 05: PGTA academic strip (differentiated from card grid) -->
       <div class="pgta-projects reveal" id="pgta">
 
         <header class="pgta-header">
-          <p class="project-number">03–04 / Proyectos académicos</p>
+          <p class="project-number">04–05 / Proyectos académicos</p>
           <span class="pgta-context">Desarrollados en equipo. Python · C# · .NET.</span>
         </header>
 
@@ -344,7 +410,7 @@
       });
     }, { rootMargin: '-15% 0px -70% 0px' });
 
-    ['featured', 'drones', 'pgta', 'about'].forEach(id => {
+    ['featured', 'drones', 'ia-local', 'pgta', 'about'].forEach(id => {
       const el = document.getElementById(id);
       if (el) navObserver.observe(el);
     });

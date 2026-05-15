@@ -483,6 +483,14 @@ a:hover {
   aspect-ratio: 16 / 9;
 }
 
+.project-wide--reversed {
+  direction: rtl;
+}
+
+.project-wide--reversed > * {
+  direction: ltr;
+}
+
 .project-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
