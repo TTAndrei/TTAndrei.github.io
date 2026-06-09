@@ -121,7 +121,7 @@
 
           <figure class="img-slot reveal reveal-delay-1" id="fig-velocity">
             <img
-              src="assets/images/optimizador-velocity.png"
+              src="assets/images/simulation_velocity.png"
               alt="Campo de velocidades (magnitud U) sobre perfil NACA0012, Re=100k, colormap turbo"
               width="800"
               height="450"
@@ -131,14 +131,19 @@
           </figure>
 
           <figure class="img-slot reveal reveal-delay-2" id="fig-ld">
-            <img
-              src="assets/images/optimizador-ld.png"
-              alt="Curva de convergencia L/D a lo largo de generaciones del algoritmo genético"
+            <video
+              src="assets/videos/naca0012_dominio_completo.mp4"
+              aria-label="Vídeo de la simulación CFD del dominio completo alrededor del perfil NACA0012"
               width="800"
               height="450"
-              loading="lazy"
-            >
-            <figcaption class="img-caption">Convergencia L/D — Algoritmo genético</figcaption>
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              preload="metadata"
+            ></video>
+            <figcaption class="img-caption">Simulación completa del dominio — NACA0012</figcaption>
           </figure>
 
         </div>
@@ -155,7 +160,7 @@
 
         <figure class="img-slot reveal" id="fig-drones">
           <img
-            src="assets/images/drones-dashboard.png"
+            src="assets/images/dron_dashboard.png"
             alt="DashboardTOTAL del sistema de drones: controles de vuelo, telemetría, mapa GPS y panel de detección"
             width="800"
             height="450"
@@ -199,8 +204,8 @@
           </div>
 
           <div class="project-links reveal reveal-delay-3">
-            <a href="assets/images/drones-detection.png" target="_blank" class="btn btn-ghost">
-              Ver detección YOLOv5 ↗
+            <a href="assets/images/dron_dashboard.png" target="_blank" rel="noopener" class="btn btn-ghost">
+              Ver dashboard completo ↗
             </a>
           </div>
         </div>
@@ -261,7 +266,7 @@
 
         <figure class="img-slot reveal reveal-delay-1" id="fig-ia-local">
           <img
-            src="assets/images/ia-local-terminal.png"
+            src="assets/images/consola_ia.png"
             alt="Terminal mostrando executor.py ejecutando un plan: barra de progreso, steps completados y resumen de cambios de archivo"
             width="800"
             height="450"
@@ -416,14 +421,16 @@
     });
 
     // Image placeholder fallback
-    document.querySelectorAll('.img-slot img').forEach(img => {
-      const slot = img.closest('.img-slot');
+    document.querySelectorAll('.img-slot img, .img-slot video').forEach(media => {
+      const slot = media.closest('.img-slot');
       const caption = slot.querySelector('.img-caption');
-      const filename = img.src.split('/').pop();
+      const source = media.currentSrc || media.src || '';
+      const filename = source.split('/').pop() || 'asset';
 
       function markMissing() {
+        if (slot.classList.contains('missing')) return;
         slot.classList.add('missing');
-        img.style.display = 'none';
+        media.style.display = 'none';
         if (caption) caption.style.display = 'none';
         const label = document.createElement('div');
         label.className = 'placeholder-label';
@@ -431,10 +438,9 @@
         slot.appendChild(label);
       }
 
-      img.addEventListener('error', markMissing);
+      media.addEventListener('error', markMissing);
 
-      // If src is empty or placeholder, also mark missing
-      if (!img.src || img.src === window.location.href) markMissing();
+      if (!source || source === window.location.href) markMissing();
     });
   </script>
 

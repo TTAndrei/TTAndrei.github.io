@@ -208,27 +208,21 @@
 
   <!-- Hero -->
   <div class="hero">
-    <h1>🖼️ Galería de Andrei</h1>
-    <p>Esta página muestra fotos de Andrei so cute. cómo añadir imágenes, GIFs y animaciones usando HTML puro.</p>
+    <h1>Galería de proyectos</h1>
+    <p>Capturas y vídeo reales del portfolio: CFD, sistema de drones e IA local.</p>
   </div>
 
   <!-- ───── Sección 1: Imagen destacada ───── -->
   <section>
-    <h2>Imagen de Andrei <3 destacada</h2>
+    <h2>Vista destacada</h2>
     <div class="imagen-destacada animado">
-      <!--
-        PARA AÑADIR TU IMAGEN:
-        1. Sube tu archivo a assets/images/
-        2. Cambia la URL del atributo src
-      -->
       <img
-        src="https://via.placeholder.com/800x400?text=Sube+tu+imagen+a+assets%2Fimages%2F"
-        alt="Imagen destacada"
+        src="assets/images/simulation_velocity_detached.png"
+        alt="Campo de velocidades alrededor de un perfil NACA0012 en régimen desprendido"
         width="800">
     </div>
     <div class="instrucciones" style="margin-top:1rem;">
-      Sube tu imagen a <code>assets/images/</code> y cambia la <code>src</code> a
-      <code>assets/images/tu-imagen.jpg</code>.
+      Captura CFD del solver LES 2D mostrando separación y estela trasera.
     </div>
   </section>
 
@@ -237,47 +231,55 @@
     <h2>Galería en cuadrícula</h2>
     <div class="galeria">
       <figure class="animado">
-        <img src="https://via.placeholder.com/300x300?text=Imagen+1" alt="Imagen 1">
-        <figcaption>Título imagen 1</figcaption>
+        <img src="assets/images/simulation_velocity.png" alt="Campo de velocidades del solver CFD">
+        <figcaption>CFD · Campo de velocidades</figcaption>
       </figure>
       <figure class="animado delay-1">
-        <img src="https://via.placeholder.com/300x300?text=Imagen+2" alt="Imagen 2">
-        <figcaption>Título imagen 2</figcaption>
+        <img src="assets/images/simulation_velocity_detached.png" alt="Visualización CFD con separación de flujo">
+        <figcaption>CFD · Flujo desprendido</figcaption>
       </figure>
       <figure class="animado delay-2">
-        <img src="https://via.placeholder.com/300x300?text=Imagen+3" alt="Imagen 3">
-        <figcaption>Título imagen 3</figcaption>
+        <img src="assets/images/dron_dashboard.png" alt="Dashboard del sistema de drones">
+        <figcaption>Drones · Dashboard de control</figcaption>
       </figure>
       <figure class="animado delay-3">
-        <img src="https://via.placeholder.com/300x300?text=Imagen+4" alt="Imagen 4">
-        <figcaption>Título imagen 4</figcaption>
+        <img src="assets/images/consola_ia.png" alt="Consola del orquestador de IA local">
+        <figcaption>IA Local · Consola de ejecución</figcaption>
       </figure>
     </div>
     <div class="instrucciones" style="margin-top:1rem;">
-      Reemplaza cada <code>src</code> con rutas reales, por ejemplo:
-      <code>assets/images/proyecto1.jpg</code>
+      Todas las miniaturas cargan desde <code>assets/images/</code>.
     </div>
   </section>
 
-  <!-- ───── Sección 3: GIF animado ───── -->
   <section>
-    <h2>GIF / Animación</h2>
+    <h2>Vídeo de simulación</h2>
+    <div class="imagen-destacada animado delay-2">
+      <video width="960" controls autoplay muted loop playsinline style="max-width:100%; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+        <source src="assets/videos/naca0012_dominio_completo.mp4" type="video/mp4">
+        Tu navegador no puede reproducir este vídeo.
+      </video>
+    </div>
+    <div class="instrucciones" style="margin-top:1rem;">
+      Vídeo MP4 del dominio completo en <code>assets/videos/naca0012_dominio_completo.mp4</code>.
+    </div>
+  </section>
+
+  <!-- ───── Sección 3: Vista comparativa ───── -->
+  <section>
+    <h2>Vista comparativa</h2>
     <div class="gif-demo">
-      <!--
-        Para usar un GIF:
-        <img src="assets/images/animacion.gif" alt="GIF" width="300" class="pulso">
-      -->
       <img
-        src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
-        alt="GIF de ejemplo"
+        src="assets/images/consola_ia.png"
+        alt="Consola del sistema de IA local"
         width="260"
         class="pulso">
       <div class="descripcion">
-        <p>Los GIFs se insertan exactamente igual que las imágenes.</p>
+        <p>La galería combina capturas estáticas con una pieza en movimiento del solver CFD.</p>
         <p style="margin-top:0.75rem;">
-          Sube tu <code>.gif</code> a <code>assets/images/</code> y usa:<br>
+          Esta captura corresponde al orquestador híbrido local+nube y complementa el vídeo del solver:<br>
           <code style="display:block; margin-top:0.4rem; background:#eee; padding:0.5rem; border-radius:4px;">
-            &lt;img src="assets/images/animacion.gif" alt="..." width="300" class="pulso"&gt;
+            assets/images/consola_ia.png
           </code>
         </p>
       </div>
@@ -289,15 +291,15 @@
     <h2>Clases de animación disponibles</h2>
     <div style="display:flex; gap:2rem; flex-wrap:wrap; align-items:center; margin-bottom:1rem;">
       <div style="text-align:center;">
-        <img src="https://via.placeholder.com/100?text=fadeInUp" alt="fadeInUp" width="100" class="animado">
+        <img src="assets/images/simulation_velocity.png" alt="Animación de entrada sobre captura CFD" width="100" class="animado" style="aspect-ratio:1/1; object-fit:cover; border-radius:8px;">
         <p style="margin-top:0.4rem;font-size:0.85rem;"><code>.animado</code><br>Fade-in desde abajo</p>
       </div>
       <div style="text-align:center;">
-        <img src="https://via.placeholder.com/100?text=pulso" alt="pulso" width="100" class="pulso">
+        <img src="assets/images/dron_dashboard.png" alt="Animación de pulso sobre dashboard de drones" width="100" class="pulso" style="aspect-ratio:1/1; object-fit:cover; border-radius:8px;">
         <p style="margin-top:0.4rem;font-size:0.85rem;"><code>.pulso</code><br>Escala pulsante</p>
       </div>
       <div style="text-align:center;">
-        <img src="https://via.placeholder.com/100?text=girando" alt="girando" width="100" class="girando">
+        <img src="assets/images/consola_ia.png" alt="Animación de giro sobre consola de IA local" width="100" class="girando" style="aspect-ratio:1/1; object-fit:cover; border-radius:8px;">
         <p style="margin-top:0.4rem;font-size:0.85rem;"><code>.girando</code><br>Rotación continua</p>
       </div>
     </div>

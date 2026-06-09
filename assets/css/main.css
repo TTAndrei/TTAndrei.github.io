@@ -411,14 +411,16 @@ a:hover {
   overflow: hidden;
 }
 
-.img-slot img {
+.img-slot img,
+.img-slot video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.img-slot:hover img {
+.img-slot:hover img,
+.img-slot:hover video {
   transform: scale(1.02);
 }
 
